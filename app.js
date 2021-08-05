@@ -7,7 +7,7 @@ const theOldWay = function(course) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('The old way:', theOldWay('Code 301'));
+console.log('The old way:', theOldWay('Code 301'));
 
 
 // STEP 2
@@ -18,7 +18,7 @@ const theNewWay = (course) => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('The new way:', theNewWay('Code 301'));
+console.log('The new way:', theNewWay('Code 301'));
 
 
 // STEP 3
@@ -28,7 +28,7 @@ const withoutParens = course => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Without parens:', withoutParens('Code 301'));
+console.log('Without parens:', withoutParens('Code 301'));
 
 
 // STEP 4
@@ -38,7 +38,7 @@ const withoutParens = course => {
 const oneLiner = course => `I cam currently enrolled in ${course}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('As a one-liner:', oneLiner('Code 301'));
+console.log('As a one-liner:', oneLiner('Code 301'));
 
 
 // STEP 5
@@ -49,7 +49,7 @@ const add = function(num1, num2) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Let\'s do some math:', add(4, 5));
+console.log('Let\'s do some math:', add(4, 5));
 
 
 // STEP 6
@@ -58,7 +58,7 @@ const add = function(num1, num2) {
 const addOneLiner = (num1, num2) => `${num1} + ${num2} = ${num1 + num2}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Add as a one-liner:', addOneLiner(4, 5));
+console.log('Add as a one-liner:', addOneLiner(4, 5));
 
 
 // STEP 7
@@ -70,7 +70,7 @@ const multiLiner = word => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Multi-line arrow function:', multiLiner('hello'));
+console.log('Multi-line arrow function:', multiLiner('hello'));
 
 
 // STEP 8
@@ -85,7 +85,7 @@ const oldObject = function(array) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Hello from the old object function', oldObject(['hi', 'hello', 'are you there?']));
+console.log('Hello from the old object function', oldObject(['hi', 'hello', 'are you there?']));
 
 
 // STEP 9
@@ -98,7 +98,7 @@ const newObject = array => ({
 });
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Hello from the new object function', newObject(['hi', 'hello', 'are you there?']));
+console.log('Hello from the new object function', newObject(['hi', 'hello', 'are you there?']));
 
 
 // STEP 10
@@ -113,7 +113,10 @@ let sum = function(a, b, c, d) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
+
+const sum1 =(a,b,c,d)=>a+b+c+d;
+console.log('the sum using arrow function',sum1(1,2,3,4));
 
 
 let objectLit = function() {
@@ -125,7 +128,10 @@ let objectLit = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
+
+const objectlit1 =()=>({key1:'value1',key2:"value2",key3:"value3"});
+console.log("object using arrow function",objectlit1());
 
 
 let sumAndProduct = function(a, b) {
@@ -135,7 +141,10 @@ let sumAndProduct = function(a, b) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
+const sumAndProduct1=(a,b)=>[a+b,a*b];
+
+  console.log("sum and product using arrow function",sumAndProduct1(3, 9));
 
 
 let message = function(name) {
@@ -143,7 +152,11 @@ let message = function(name) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(message('Allie'));
+
+const message1=name=>`Hello,${name}!`;
+
+console.log("message using arrow function",message1('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -156,7 +169,11 @@ let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
+// arrow functions cannot be used as constructors
+
+// const Student1=(name,age,hometown)=>({this.namename;this.age=age;this.hometown=hometown;});
+
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -168,8 +185,10 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
+Student.prototype.greeting1=()=>`Hi, my name is ${this.name}`;
 
+console.log("greeting 1",joe.greeting1());//output is not correct, it cannot identify the this 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
@@ -177,30 +196,34 @@ Student.prototype.greeting = function() {
 Student.courseName = function() {
   return 'This student is enrolled in Code 301.';
 };
+//we are not using this so i think this function will work properly when changed to an arrow function
 
+Student.courseName1=()=>'This student is enrolled in Code 301';
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
+console.log("an arrow function>>",Student.courseName1());
 
 
 
 // STEP 11
 // How do arrow functions affect constructor functions?
 Student.prototype.scope = function() {
-  console.log(this);
+  console.log("testing this",this);
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log("testing this",joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
+// an object of type Student 
 //
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//the windows object
 // 3. Explain why "this" is different when an arrow function is used.
-//
+//because it Does not have its own bindings to "this",Arrow functions do not have their own this.
